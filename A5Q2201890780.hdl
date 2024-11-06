@@ -1,0 +1,11 @@
+CHIP A5Q2201890780 {
+    IN V,B,G;
+    OUT C;
+
+    PARTS:
+    And (a=V, b=B, out=andout1);
+    Not (in=B, out=notB);
+    Or (a=V, b=notB, out=orout1);
+    Or (a=andout1, b=orout1, out=orout2);
+    And (a=G, b=orout2, out=C);
+}
